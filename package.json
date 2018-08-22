@@ -1,0 +1,23 @@
+{
+  "name": "battleshipgame",
+  "version": "1.0.0",
+  "description": "Battleship game, created in use javascript",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.4.0"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgnieszkaKurek/BattleShipGame.git"
+  },
+  "author": "Agnieszka Kurek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgnieszkaKurek/BattleShipGame/issues"
+  },
+  "homepage": "https://github.com/AgnieszkaKurek/BattleShipGame#readme"
+}
