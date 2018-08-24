@@ -6,7 +6,8 @@ describe('BattleShipGame', () => {
         game = new BattleShipGame();
     });
     it('', () => {
-        expect().();
+       
+        expect(game.).toBeDefined();
     });
 
 });
