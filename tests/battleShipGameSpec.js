@@ -1,13 +1,14 @@
-/*global BattleShipGame*/
+
+import  {BattleShipGame} from './../src/battleShipGame.js';
 
 describe('BattleShipGame', () => {
     let game;
     beforeEach(() => {
         game = new BattleShipGame();
     });
-    it('', () => {
+    it('Given game, when game begins, then contains a board', () => {
        
-        expect(game.).toBeDefined();
+        expect(game.board).toBeDefined();
     });
 
 });

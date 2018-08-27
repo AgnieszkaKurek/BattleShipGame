@@ -1,6 +1,7 @@
 module.exports = {
     "env": {
-        "browser": true
+        "browser": true,
+        "jasmine": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
@@ -13,11 +14,15 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
             "always"
         ]
+    },
+    "parserOptions": {
+        "sourceType": "module"
     }
+   
 };

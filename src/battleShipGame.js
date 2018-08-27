@@ -1,6 +1,9 @@
-class BattleShipGame{// eslint-disable-line no-unused-vars
+
+export class BattleShipGame {
     constructor() {
         this.initBoard();
     }
-
+    initBoard() {
+    this.board = new Array(11);
+    }
 }
