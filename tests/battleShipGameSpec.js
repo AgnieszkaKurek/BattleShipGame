@@ -6,9 +6,9 @@ describe('BattleShipGame', () => {
     beforeEach(() => {
         game = new BattleShipGame();
     });
-    it('Given game, when game begins, then contains a board', () => {
+    it('Given created game, when getting its instance, then it is defined', () => {
        
-        expect(game.board).toBeDefined();
+        expect(game).toBeDefined();
     });
 
 });

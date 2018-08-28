@@ -11,3 +11,4 @@ Open terminal and run command: `npm install`
 ## To run unit tests locally:
 * run `npm test` to run tests once
 * run `npm run test`-watch to run tests with watching files
+* run `npm run test-watch` to run tests with watching files
