@@ -10,7 +10,7 @@ Open terminal and run command: `npm install`
 
 ## Continuous Integration
 Check travis pipeline:
-[![Build Status](https://https://travis-ci.org/AgnieszkaKurek/BattleShipGame.svg?branch=master)](https://travis-ci.org/AgnieszkaKurek/BattleShipGame)
+[![Build Status](https://travis-ci.org/AgnieszkaKurek/BattleShipGame.svg?branch=master)](https://travis-ci.org/AgnieszkaKurek/BattleShipGame)
 
 ## Continuous Delivery
 Application is automaticaly deployed into https://agnieszkakurek.github.io/BattleShipGame on every push to master by [Travis pipeline](https://travis-ci.org/AgnieszkaKurek/BattleShipGame)
