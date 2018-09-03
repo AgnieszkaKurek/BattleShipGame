@@ -1,3 +1,6 @@
-export function showMessage() {
-  document.getElementById('message').innerHTML = 'Hello World';
+import {BoardRenderer} from './boardRenderer.js';
+
+export function BattleShipGameInitializer(){
+    (new BoardRenderer()).initBoard();
 }
+

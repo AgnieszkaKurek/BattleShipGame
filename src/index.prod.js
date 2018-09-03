@@ -1,4 +1,4 @@
 import 'babel-polyfill';
-import { showMessage} from './index.common';
+import { BattleShipGameInitializer } from './index.common';
 
-showMessage();
+BattleShipGameInitializer();
