@@ -3,11 +3,18 @@ html{
     background: linear-gradient(#fff, #0000cc);
 }
 body {
-    color: #000033;
     font-weight: bold;
     text-align: center;
 }
 
 table{
-    background-color: crimson;
+    table-layout: fixed;
+    background-color:  #e6ecff;
+    
+   
 }
+
+table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+ }

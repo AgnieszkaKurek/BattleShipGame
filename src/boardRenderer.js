@@ -5,7 +5,6 @@ export class BoardRenderer {
     }
 
     initBoard() {
-
         let table = '';
         table += '<table ></table>';
         $('#board').html(table);
