@@ -1,19 +1,23 @@
+import $ from 'jquery';
 export class BoardRenderer {
     constructor() {
 
     }
 
     initBoard() {
-        const body = document.getElementsByTagName('body')[0];//todo: use jquery here
-        const table = document.createElement('table');
+
+        let table = '';
+        table += '<table ></table>';
+        $('#board').html(table);
+        let tr = '';
         for (let i = 0; i < 10; i++) {
-            const tr = document.createElement('tr');
-            table.appendChild(tr);
+            tr += '<tr></tr>';
+            $('table').html(tr);
+            let td = '';
             for (let j = 0; j < 10; j++) {
-                const td = document.createElement('td');
-                tr.appendChild(td);
+                td += '<td></td>';
+                $('tr').html(td);
             }
         }
-        body.appendChild(table);
     }
 }
