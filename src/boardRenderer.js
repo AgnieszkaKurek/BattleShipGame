@@ -1,18 +1,19 @@
 import $ from 'jquery';
+
 export class BoardRenderer {
     constructor() {
-        this.numberOfElements = 11;
+        this.numberOfRowsAndColumns = 10;
     }
 
     initBoard() {
-        let tableConstructor = '';
-        let columns = '';
-        for (let i = 0; i < this.numberOfElements; i++) {
-            tableConstructor += `<tr>${columns}</tr>`;
-            columns = '<td></td>';
-            columns = columns.repeat(this.numberOfElements);
+        let rows = '';
+        for (let rowIndex = 0; rowIndex < this.numberOfRowsAndColumns; rowIndex++) {
+            let columns = '';
+            for (let columnIndex = 0; columnIndex < this.numberOfRowsAndColumns; columnIndex++) {
+                columns += `<td data-position-row="${rowIndex}" data-position-column="${columnIndex}"></td>`;
+            }
+            rows += `<tr>${columns}</tr>`;
         }
-        let table = `<table>${tableConstructor}</table>`;
-        $('#board').html(table);
+        $('#board').html(`<table>${rows}</table>`);
     }
 } 
