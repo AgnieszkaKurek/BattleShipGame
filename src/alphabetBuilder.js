@@ -1,11 +1,11 @@
 
 export class AlphabetBuilder {
     constructor() {
-        this.unicodeNumber = 65;
+        this._unicodeNumber = 65;//todo: rename, it should be private
     }
 
-    getStringOfLetters(numberOfRowsAndColumns) {
-        return  [...Array(numberOfRowsAndColumns).keys()].map(i => String.fromCharCode(i + this.unicodeNumber));
-       
+    getStringOfLetters(stringLength) {//todo: rename it
+        return [...Array(stringLength).keys()].map(i => String.fromCharCode(i + this._unicodeNumber));
+
     }
 }
