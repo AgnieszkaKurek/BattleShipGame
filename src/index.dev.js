@@ -1,3 +1,4 @@
-import { showMessage } from './index.common';
 
-showMessage();
+import { BattleShipGameInitializer } from './index.common';
+
+BattleShipGameInitializer();
