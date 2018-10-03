@@ -1,17 +1,17 @@
 import { LetterGenerator } from '../src/letterGenerator';
 
 describe('LetterGenerator', () => {
-    let letter;
-    
+    let letterGenerator;
+
     beforeEach(() => {
-        letter = new LetterGenerator();
+        letterGenerator = new LetterGenerator();
     });
 
     it('When letter possition is 0 than we get letter A', () => {
-        expect(letter.generateUppercaseLetter(0)).toEqual('A');
+        expect(letterGenerator.generateUppercaseLetter(0)).toEqual('A');
     });
-    
+
     it('When letter possition is 9 than we get letter J', () => {
-        expect(letter.generateUppercaseLetter(9)).toEqual('J');
+        expect(letterGenerator.generateUppercaseLetter(9)).toEqual('J');
     });
 });
