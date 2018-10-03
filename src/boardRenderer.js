@@ -5,7 +5,6 @@ export class BoardRenderer {
     constructor(letterGenerator = new LetterGenerator()) {
         this._numberOfRowsAndColumns = 10;
         this._letterGenerator = letterGenerator;
-
     }
 
     initBoard() {
@@ -20,9 +19,9 @@ export class BoardRenderer {
                 }
                 else if (rowIndex === 0) {
                     state = 'box-header';
-                    headlines =  this._letterGenerator.generateUppercaseLetter(columnIndex -1);
+                    headlines = this._letterGenerator.generateUppercaseLetter(columnIndex - 1);
                 }
-                else if(columnIndex === 0){
+                else if (columnIndex === 0) {
                     state = 'box-header';
                     headlines = rowIndex;
                 }

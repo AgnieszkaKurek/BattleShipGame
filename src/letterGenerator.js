@@ -1,4 +1,3 @@
-
 export class LetterGenerator {
     constructor() {
         this._unicodeValueforA = 65;
