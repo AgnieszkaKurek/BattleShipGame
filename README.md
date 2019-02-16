@@ -19,5 +19,6 @@ In order to get the content of the deployed files you may:
 * check [gh-pages branch](https://github.com/AgnieszkaKurek/BattleShipGame/tree/gh-pages)
 
 ## To run unit tests locally:
+* install Firefox (it is set as a default browser for running tests)
 * run `npm test` to run tests once
 * run `npm run test-watch` to run tests with watching files
