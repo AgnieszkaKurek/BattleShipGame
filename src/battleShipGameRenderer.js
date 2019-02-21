@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { LetterGenerator } from './letterGenerator';
 
-export class BoardRenderer {
+export class BattleShipGameRenderer {
     constructor(letterGenerator = new LetterGenerator()) {
         this._numberOfRowsAndColumns = 10;
         this._letterGenerator = letterGenerator;

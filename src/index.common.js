@@ -1,6 +1,6 @@
-import {BoardRenderer} from './boardRenderer.js';
+import {BattleShipGameRenderer} from './battleShipGameRenderer.js/index.js';
 
 export function BattleShipGameInitializer(){
-    (new BoardRenderer()).initBoard();
+    (new BattleShipGameRenderer()).initBoard();
 }
 
