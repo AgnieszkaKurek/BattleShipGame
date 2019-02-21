@@ -12,7 +12,7 @@ describe('BattleShipGame', () => {
     it('Given game, when game begins, then contains a board', () => {
         expect(game.board).toBeDefined();
     });
-    it('Given game, when game begins, then board is of 9 empty elements', () => {
+    it('Given game, when game begins, then board is of 10 array of 10 elements, which are 0', () => {
         expect(game.board).toEqual([
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
