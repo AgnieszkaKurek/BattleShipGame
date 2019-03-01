@@ -1,6 +1,9 @@
-import {BattleShipGameRenderer} from './battleShipGameRenderer.js';
+import { BattleShipGameRenderer } from './battleShipGameRenderer.js';
+import { LetterGenerator } from './letterGenerator.js';
 
-export function BattleShipGameInitializer(){
-    (new BattleShipGameRenderer()).initBoard();
+export function BattleShipGameInitializer() {
+    const letterGenerator = new LetterGenerator();
+    const battleShipGameRenderer = new BattleShipGameRenderer(letterGenerator);
+    battleShipGameRenderer.initBoard();
 }
 

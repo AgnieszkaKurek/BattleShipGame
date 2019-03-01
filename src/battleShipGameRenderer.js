@@ -1,11 +1,9 @@
 import $ from 'jquery';
-import { LetterGenerator } from './letterGenerator';
 
 export class BattleShipGameRenderer {
-    constructor(letterGenerator = new LetterGenerator()) {
+    constructor(letterGenerator) {
         this._numberOfRowsAndColumns = 10;
         this._letterGenerator = letterGenerator;
-
     }
 
     initBoard() {
@@ -42,7 +40,7 @@ export class BattleShipGameRenderer {
     }
 
     _appendToEventHandlers() {
-        $('.box').click((e) => {
+        $('.box').mouseenter((e) => {
             const box = $(e.target);
             const row = box.attr('data-position-row');
             const column = box.attr('data-position-column');
