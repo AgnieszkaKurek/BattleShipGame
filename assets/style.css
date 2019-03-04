@@ -23,6 +23,9 @@ table, th, td {
     background-color: aquamarine;
     border: 2px solid;
 }
+[data-state=box-header]:hover{
+    cursor: 
+}
 
 [data-state=invisible-box]{
     border: none;
@@ -33,3 +36,12 @@ table, th, td {
     border: 1px solid black;
     background-color: #e6ecff;
 }
+
+/* todo: use kebab case */
+[data-state=empty-box]:hover{
+   cursor: pointer; 
+}
+/* todo: use kebab case */
+[data-state=not-empty-box]:hover{
+    cursor: not-allowed;
+ }

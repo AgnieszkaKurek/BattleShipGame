@@ -1,9 +1,11 @@
 import $ from 'jquery';
+import { BattleShipBoxStatus } from './battleShipBoxStatus.js';
 
 export class BattleShipGameRenderer {
-    constructor(letterGenerator) {
+    constructor(letterGenerator, game) {
         this._numberOfRowsAndColumns = 10;
         this._letterGenerator = letterGenerator;
+        this._game = game;
     }
 
     initBoard() {
@@ -44,7 +46,11 @@ export class BattleShipGameRenderer {
             const box = $(e.target);
             const row = box.attr('data-position-row');
             const column = box.attr('data-position-column');
-            console.log(`row ${row}, column ${column}`);
+            //todo: handle hovering on first column and row
+            const status = this._game.getBoxStatus(row, column);
+            //console.log(status);
+            if (status === Symbol(0)){box.attr('empty-box');}
+            else {box.attr('not-empty-box');}
         });
     }
 
