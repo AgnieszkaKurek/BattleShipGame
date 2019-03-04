@@ -15,21 +15,22 @@ export class BattleShipGameRenderer {
 
     _createBoard() {
         let rows = '';
-        for (let rowIndex = 0; rowIndex < this._numberOfRowsAndColumns + 1; rowIndex++) {
+        const startingValue = -1;
+        for (let rowIndex = startingValue; rowIndex < this._numberOfRowsAndColumns; rowIndex++) {
             let columns = '';
-            for (let columnIndex = 0; columnIndex < this._numberOfRowsAndColumns + 1; columnIndex++) {
+            for (let columnIndex = startingValue; columnIndex < this._numberOfRowsAndColumns; columnIndex++) {
                 let cellState = 'basic-box';
                 let initialCellContent = '';
-                if (columnIndex === 0 && rowIndex === 0) {
+                if (columnIndex === startingValue && rowIndex === startingValue) {
                     cellState = 'invisible-box';
                 }
-                else if (rowIndex === 0) {
+                else if (rowIndex === startingValue) {
                     cellState = 'box-header';
-                    initialCellContent = this._letterGenerator.generateUppercaseLetter(columnIndex - 1);
+                    initialCellContent = this._letterGenerator.generateUppercaseLetter(columnIndex);
                 }
-                else if (columnIndex === 0) {
+                else if (columnIndex === startingValue) {
                     cellState = 'box-header';
-                    initialCellContent = rowIndex.toString();
+                    initialCellContent = (rowIndex +1).toString();
                 }
                 columns += `<td class ='box'
                                     data-position-row="${rowIndex}"
@@ -44,10 +45,14 @@ export class BattleShipGameRenderer {
     _appendToEventHandlers() {
         $('.box').mouseenter((e) => {
             const box = $(e.target);
-            const row = box.attr('data-position-row');
-            const column = box.attr('data-position-column');
-            //todo: handle hovering on first column and row
+            const row = parseInt(box.attr('data-position-row'));
+            const column = parseInt(box.attr('data-position-column'));
+            if (row === -1 || column === -1) return;
+            
             const status = this._game.getBoxStatus(row, column);
+            
+            console.log(`${row}, ${column} - ${status.toString()}`);
+            //todo: handle hovering on first column and row
         });
     }
 }
