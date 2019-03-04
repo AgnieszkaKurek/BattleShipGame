@@ -48,9 +48,6 @@ export class BattleShipGameRenderer {
             const column = box.attr('data-position-column');
             //todo: handle hovering on first column and row
             const status = this._game.getBoxStatus(row, column);
-            //console.log(status);
-            if (status === Symbol(0)){box.attr('empty-box');}
-            else {box.attr('not-empty-box');}
         });
     }
 
