@@ -48,11 +48,8 @@ export class BattleShipGameRenderer {
             const row = parseInt(box.attr('data-position-row'));
             const column = parseInt(box.attr('data-position-column'));
             if (row === -1 || column === -1) return;
-            
+
             const status = this._game.getBoxStatus(row, column);
-            
-            console.log(`${row}, ${column} - ${status.toString()}`);
-            //todo: handle hovering on first column and row
         });
     }
 }
