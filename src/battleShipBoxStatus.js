@@ -1,4 +1,3 @@
-
 export const BattleShipBoxStatus = {
     EmptyNotHit: Symbol(0),
     EmptyHit: Symbol(1),

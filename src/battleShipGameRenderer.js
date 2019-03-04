@@ -50,6 +50,4 @@ export class BattleShipGameRenderer {
             const status = this._game.getBoxStatus(row, column);
         });
     }
-
 }
-
