@@ -19,7 +19,7 @@ export class BattleShipGameRenderer {
         for (let rowIndex = startingValue; rowIndex < this._numberOfRowsAndColumns; rowIndex++) {
             let columns = '';
             for (let columnIndex = startingValue; columnIndex < this._numberOfRowsAndColumns; columnIndex++) {
-                let cellState = 'basic-box';
+                let cellState = 'empty-not-hit';
                 let initialCellContent = '';
                 if (columnIndex === startingValue && rowIndex === startingValue) {
                     cellState = 'invisible-box';
@@ -30,7 +30,7 @@ export class BattleShipGameRenderer {
                 }
                 else if (columnIndex === startingValue) {
                     cellState = 'box-header';
-                    initialCellContent = (rowIndex +1).toString();
+                    initialCellContent = (rowIndex + 1).toString();
                 }
                 columns += `<td class ='box'
                                     data-position-row="${rowIndex}"
@@ -43,13 +43,23 @@ export class BattleShipGameRenderer {
     }
 
     _appendToEventHandlers() {
-        $('.box').mouseenter((e) => {
+        $('.box').click((e) => {
             const box = $(e.target);
             const row = parseInt(box.attr('data-position-row'));
             const column = parseInt(box.attr('data-position-column'));
             if (row === -1 || column === -1) return;
-
-            const status = this._game.getBoxStatus(row, column);
+            const status = this._game.setShip(row, column);
+            box.attr('data-state', this._getVisualBoxStatus(status));
         });
+    }
+
+    _getVisualBoxStatus(status){
+        switch (status) {
+            case BattleShipBoxStatus.ShipNotHit: return 'ship-not-hit';
+            case BattleShipBoxStatus.ShipHit: return 'ship-hit';
+            case BattleShipBoxStatus.EmptyNotHit: return 'empty-not-hit';
+            case BattleShipBoxStatus.EmptySurroundingHitShip: return 'epty-surrounding-hit-ship';
+            default: return 'empty-not-hit';
+        }
     }
 }

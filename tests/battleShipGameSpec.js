@@ -28,4 +28,9 @@ describe('BattleShipGame', () => {
     it('Given game, when game begins, then board boxes are empty', () => {
         expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.EmptyNotHit);
     });
+
+    it('When a player clicks on the box, the status of the box changes', () => {
+       game.getBoxStatus(0);
+        expect(game.setShip(0, 0)).toEqual(BattleShipBoxStatus.ShipNotHit);
+    });
 });
