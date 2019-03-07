@@ -6,6 +6,7 @@ export class BattleShipGameRenderer {
         this._numberOfRowsAndColumns = 10;
         this._letterGenerator = letterGenerator;
         this._game = game;
+        
     }
 
     initBoard() {
@@ -48,7 +49,8 @@ export class BattleShipGameRenderer {
             const row = parseInt(box.attr('data-position-row'));
             const column = parseInt(box.attr('data-position-column'));
             if (row === -1 || column === -1) return;
-            const status = this._game.setShip(row, column);
+            this._game.setShip(row, column);
+            const status = this._game.getBoxStatus(row, column);
             box.attr('data-state', this._getVisualBoxStatus(status));
         });
     }

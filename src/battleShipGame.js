@@ -14,9 +14,6 @@ export class BattleShipGame {
         if (currentStatus === BattleShipBoxStatus.ShipNotHit || currentStatus === BattleShipBoxStatus.EmptyNotHit) {
             const newStatus = currentStatus === BattleShipBoxStatus.ShipNotHit ? BattleShipBoxStatus.EmptyNotHit : BattleShipBoxStatus.ShipNotHit;
             this.board[row][column] = newStatus;
-            return newStatus;
-        } else {
-            return currentStatus;
         }
     }
 } 

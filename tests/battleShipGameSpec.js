@@ -4,7 +4,7 @@ import { BattleShipBoxStatus } from '../src/battleShipBoxStatus.js';
 
 describe('BattleShipGame', () => {
     let game;
-    
+
     beforeEach(() => {
         game = new BattleShipGame();
     });
@@ -29,8 +29,14 @@ describe('BattleShipGame', () => {
         expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.EmptyNotHit);
     });
 
-    it('When a player clicks on the box, the status of the box changes', () => {
-       game.getBoxStatus(0);
-        expect(game.setShip(0, 0)).toEqual(BattleShipBoxStatus.ShipNotHit);
+    it('Given status box EmptyNotHit, when set ship, then box status changes to ShipNotHit', () => {
+       game.setShip(0, 0);
+       expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.ShipNotHit);
     });
+
+    it('Given status box ShipNotHit, when set ship, then box status changes to EmptyNotHit', () => {
+        game.setShip(0, 0);
+        game.setShip(0, 0);
+       expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.EmptyNotHit);
+     });
 });

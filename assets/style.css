@@ -35,11 +35,15 @@ table, th, td {
 }
 
 .box[data-state=empty-not-hit]{
-    cursor: url(icons/rudder.png), pointer;
+    cursor: url(icons/cursor.png), pointer;
 }
 
 .box[data-state=ship-not-hit]{
     background-color: #99CCCC;
     background-image: url(icons/ship.png);
-    cursor: url(icons/wheel.png), pointer; 
- }
+    cursor: url(icons/cursor2.png), pointer; 
+}
+
+.box[data-state=ship-not-hit]:hover{
+    background-color: #CCFF66;
+}
