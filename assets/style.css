@@ -19,17 +19,35 @@ table, th, td {
     color:black;
 }
 
-[data-state=box-header]{
-    background-color: aquamarine;
-    border: 2px solid;
+.box{
+    border: 1px solid black;
+    background-color: #e6ecff;
 }
 
-[data-state=invisible-box]{
+.box[data-state=box-header]{
+    border: 2px solid;
+    background-color: aquamarine;
+}
+
+.box[data-state=invisible-box]{
     border: none;
     background-color: #e6ecff;
 }
 
-[data-state=basic-box]{
-    border: 1px solid black;
-    background-color: #e6ecff;
+.box[data-state=empty-not-hit]{
+    cursor: url(icons/cursor.png), pointer;
+}
+
+.box[data-state=empty-not-hit]:hover{
+    background-color: #CCFF66;
+}
+
+.box[data-state=ship-not-hit]{
+    background-color: #99CCCC;
+    background-image: url(icons/ship.png);
+    cursor: url(icons/cursor2.png), pointer; 
+}
+
+.box[data-state=ship-not-hit]:hover{
+    background-color: #CCFF66;
 }
