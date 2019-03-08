@@ -38,6 +38,10 @@ table, th, td {
     cursor: url(icons/cursor.png), pointer;
 }
 
+.box[data-state=empty-not-hit]:hover{
+    background-color: #CCFF66;
+}
+
 .box[data-state=ship-not-hit]{
     background-color: #99CCCC;
     background-image: url(icons/ship.png);

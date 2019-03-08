@@ -29,14 +29,15 @@ describe('BattleShipGame', () => {
         expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.EmptyNotHit);
     });
 
-    it('Given status box EmptyNotHit, when set ship, then box status changes to ShipNotHit', () => {
-       game.setShip(0, 0);
-       expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.ShipNotHit);
+    it('Given empty box, when set ship, then box gets ship', () => {
+        game.setShip(0, 0);
+        expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.ShipNotHit);
     });
 
-    it('Given status box ShipNotHit, when set ship, then box status changes to EmptyNotHit', () => {
+    it('Given empty box, when set ship twice, then box status does not change', () => {
+        const status = game.getBoxStatus(0, 0);
         game.setShip(0, 0);
         game.setShip(0, 0);
-       expect(game.getBoxStatus(0, 0)).toEqual(BattleShipBoxStatus.EmptyNotHit);
-     });
+        expect(game.getBoxStatus(0, 0)).toEqual(status);
+    });
 });
